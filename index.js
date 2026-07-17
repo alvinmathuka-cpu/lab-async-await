@@ -25,16 +25,18 @@ async function getPosts() {
   try {
     const response = await fetch("https://jsonplaceholder.typicode.com/posts");
 
-    if (!response.ok) {
-      throw new Error(`HTTP Error: ${response.status}`);
-    }
+    // This is For HTML errors
+    // if (!response.ok) {
+    //   throw new Error(`HTML fetch error`);
+    // }
 
     const posts = await response.json();
     console.log(posts);
 
     displayPosts(posts);
+    // This is for the codebase
   } catch (error) {
-    console.error("Error fetching posts:", error);
+    console.error("Error handling posts:", error);
   }
 }
 
